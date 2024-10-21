@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - VS Kart</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css"> <!-- Link to your custom CSS -->
+    <style>
+        body {
+            background-color: #f0f8ff; /* Light background color */
+        }
+        .login-container {
+            max-width: 400px; /* Set a max width for the login box */
+            margin: auto; /* Center the box */
+            padding: 20px; /* Padding inside the box */
+            border-radius: 10px; /* Rounded corners */
+            background-color: #ffffff; /* White background for the form */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            margin-top: 80px; /* Margin at the top */
+            margin-bottom: 60px; /* Margin at the bottom to avoid touching the footer */
+        }
+        h2 {
+            color: #333; /* Dark color for the heading */
+            text-align: center;
+        }
+        .form-control {
+            border-radius: 20px; /* Round the edges of input fields */
+            border: 1px solid #ddd; /* Light border color */
+        }
+        .btn-primary {
+            background-color: #28a745; /* Green background for the button */
+            border: none; /* Remove border */
+            border-radius: 20px; /* Round the edges of the button */
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+        .btn-primary:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+        .footer {
+            background-color: #333; /* Footer background color */
+            color: white; /* Footer text color */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light" style="background: linear-gradient(to right, #FFD700 70%, #32CD32 30%);">
+    <a class="navbar-brand" href="#">
+        <img src="LOGO.jpg" alt="VS Kart Logo" height="50">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="products.html">Products</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn btn-success" href="login.html" style="color: white;">Login</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Login Form Section -->
+<div class="container">
+    <div class="login-container">
+        <h2>Login</h2>
+        <form class="mt-4">
+            <div class="form-group">
+                <label for="email" class="text-dark">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password" class="text-dark">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+            <p class="text-center mt-3 text-dark">Don't have an account? <a href="register.html" class="text-dark">Register here</a></p>
+        </form>
+    </div>
+</div>
+
+<!-- Footer Section -->
+<footer class="text-center py-4 footer">
+    <p>&copy; 2024 VS Kart. All rights reserved.</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<input type="email" class="form-control" id="email" placeholder="Enter your email">
+<input type="password" class="form-control" id="password" placeholder="Password">
+<script src="index.js"></script>
+
+</body>
+</html>

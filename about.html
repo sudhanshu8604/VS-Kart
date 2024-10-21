@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - VS Kart</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css"> <!-- Link to your custom CSS -->
+    <style>
+        body {
+            background-color: #f7f9fc; /* Light background color */
+        }
+        .about-container {
+            max-width: 800px; /* Set a max width for the about section */
+            margin: auto; /* Center the section */
+            padding: 20px; /* Padding inside the section */
+            border-radius: 10px; /* Rounded corners */
+            background-color: #ffffff; /* White background for the section */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+        .section-heading {
+            color: #28a745; /* Green color for headings */
+            text-align: center; /* Center align the headings */
+            margin: 30px 0; /* Margin for spacing */
+        }
+        .about-text {
+            color: #333; /* Darker text for readability */
+            text-align: center; /* Center align the text */
+            margin-bottom: 20px; /* Bottom margin for spacing */
+        }
+        .team-member {
+            margin: 20px; /* Margin for each team member */
+            text-align: center; /* Center align the names */
+            font-size: 1.2em; /* Increase font size */
+            font-weight: bold; /* Make the names bold */
+            color: #fff; /* White text color */
+            padding: 15px; /* Padding for better spacing */
+            border-radius: 8px; /* Rounded corners */
+            background-color: #28a745; /* Green background for team members */
+            transition: transform 0.3s, background-color 0.3s; /* Smooth hover effect */
+            border: 2px solid #fff; /* White border for contrast */
+        }
+        .team-member:hover {
+            transform: scale(1.05); /* Scale effect on hover */
+            background-color: #218838; /* Darker green on hover */
+        }
+        .team-container {
+            display: flex; /* Flexbox for layout */
+            flex-wrap: wrap; /* Allow wrapping to next line */
+            justify-content: center; /* Center align team members */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light" style="background: linear-gradient(to right, #FFD700 70%, #32CD32 30%);">
+    <a class="navbar-brand" href="index.html">
+        <img src="LOGO.jpg" alt="VS Kart Logo" height="50">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="products.html">Products</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn btn-success" href="login.html" style="color: white;">Login</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- About Section -->
+<section class="container py-5">
+    <div class="about-container">
+        <h2 class="section-heading">About Us</h2>
+        <p class="about-text">At VS Kart, we are committed to providing eco-friendly and sustainable products that help you make a positive impact on the environment. Our mission is to offer a one-stop shop for conscious consumers who value sustainability without compromising on quality.</p>
+        
+        <h4>Our Story</h4>
+        <p>Founded in 2024, VS Kart was born out of a passion for sustainability and a desire to offer products that are good for both people and the planet. We believe that every small change can make a big difference, and we are dedicated to curating a selection of products that reflect our values.</p>
+        
+        <h4>Our Products</h4>
+        <p>We carefully source our products from trusted suppliers who share our commitment to sustainability. From eco-friendly bags to organic cotton clothing, each product is chosen with the utmost care to ensure it meets our high standards for quality and environmental responsibility.</p>
+        
+        <h4>Join Us in Making a Difference</h4>
+        <p>We invite you to explore our range of products and join us on our journey towards a more sustainable future. Together, we can create a positive impact on the environment and promote a lifestyle that prioritizes sustainability.</p>
+
+        <h3 class="section-heading">Meet Our Team</h3>
+        <div class="team-container">
+            <div class="team-member">Sudhanshu Shukla</div>
+            <div class="team-member">Vishwas Tiwari</div>
+            <div class="team-member">Vishal Tripathi</div>
+            <div class="team-member">Vinod Kumar Verma</div>
+            <div class="team-member">Abhishek Tiwari</div>
+            <div class="team-member">Utkarsh Shukla</div>
+            <!-- Add more team members as needed -->
+        </div>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="text-center py-4" style="background-color: #333; color: white;">
+    <p>&copy; 2024 VS Kart. All rights reserved.</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

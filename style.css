@@ -1,0 +1,77 @@
+/* Basic Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Navbar */
+.navbar {
+    padding: 15px;
+}
+
+.navbar a {
+    color: #333; /* Default link color */
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: #fff; /* Change color on hover */
+}
+
+/* Banner Section */
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+/* Button */
+.btn-primary {
+    background-color: #007bff; /* Primary button color */
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Featured Products Section */
+.featured-products {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.card {
+    border: none; /* Remove card border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.2s; /* Smooth scale effect on hover */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift card on hover */
+}
+
+.card-img-top {
+    border-radius: 10px 10px 0 0; /* Rounded top corners for images */
+}
+
+/* Footer Section */
+footer {
+    background-color: #333; /* Footer background color */
+    color: white; /* Footer text color */
+    padding: 20px;
+}
+.development-notice {
+    margin-top: 20px; /* Space above the message */
+    padding: 15px; /* Padding inside the message box */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #ffcccb; /* Light red/pink color */
+    color: #333; /* Dark text color */
+    font-weight: bold; /* Bold text */
+    display: inline-block; /* Inline block for centering */
+}
