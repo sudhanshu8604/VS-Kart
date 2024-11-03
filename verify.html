@@ -4,36 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Certificate Verification</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .card {
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .verification-result {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
 
     <h2>Certificate Verification</h2>
 
-    <form id="verificationForm">
-        <h3>Human Resources</h3>
-        <input type="text" id="hrName" placeholder="Name" required>
-        <input type="date" id="hrJoiningDate" required>
-        <input type="date" id="hrEndingDate" required>
-        <input type="text" id="hrCertificateNumber" placeholder="Certificate Number" required>
-        <button type="button" onclick="verifyHR()">Verify HR Candidate</button>
-        <p id="hrVerificationResult"></p>
+    <div class="container">
+        <div class="card">
+            <h3>Human Resources</h3>
+            <form id="verificationForm">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="hrName" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="date" class="form-control" id="hrJoiningDate" required>
+                </div>
+                <div class="form-group">
+                    <input type="date" class="form-control" id="hrEndingDate" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="hrCertificateNumber" placeholder="Certificate Number" required>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="verifyHR()">Verify HR Candidate</button>
+                <p id="hrVerificationResult" class="verification-result"></p>
+            </form>
+        </div>
 
-        <h3>Graphic Design</h3>
-        <input type="text" id="gdName" placeholder="Name" required>
-        <input type="date" id="gdJoiningDate" required>
-        <input type="date" id="gdEndingDate" required>
-        <input type="text" id="gdCertificateNumber" placeholder="Certificate Number" required>
-        <button type="button" onclick="verifyGD()">Verify GD Candidate</button>
-        <p id="gdVerificationResult"></p>
+        <div class="card">
+            <h3>Graphic Design</h3>
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="gdName" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="date" class="form-control" id="gdJoiningDate" required>
+                </div>
+                <div class="form-group">
+                    <input type="date" class="form-control" id="gdEndingDate" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="gdCertificateNumber" placeholder="Certificate Number" required>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="verifyGD()">Verify GD Candidate</button>
+                <p id="gdVerificationResult" class="verification-result"></p>
+            </form>
+        </div>
 
-        <h3>Social Media Marketing</h3>
-        <input type="text" id="smmName" placeholder="Name" required>
-        <input type="date" id="smmJoiningDate" required>
-        <input type="date" id="smmEndingDate" required>
-        <input type="text" id="smmCertificateNumber" placeholder="Certificate Number" required>
-        <button type="button" onclick="verifySMM()">Verify SMM Candidate</button>
-        <p id="smmVerificationResult"></p>
-    </form>
+        <div class="card">
+            <h3>Social Media Marketing</h3>
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="smmName" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="date" class="form-control" id="smmJoiningDate" required>
+                </div>
+                <div class="form-group">
+                    <input type="date" class="form-control" id="smmEndingDate" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="smmCertificateNumber" placeholder="Certificate Number" required>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="verifySMM()">Verify SMM Candidate</button>
+                <p id="smmVerificationResult" class="verification-result"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
         function verifyHR() {
@@ -87,3 +150,4 @@
 
 </body>
 </html>
+
