@@ -28,81 +28,31 @@
     </style>
 </head>
 <body>
-    <nav
-    class="navbar navbar-expand-lg navbar-light sticky-top"
-    style="background-color: #b2e0b2;"  <!-- Light green color -->
-    <a class="navbar-brand" href="#">
-      <img src="LOGO.jpg" alt="VS Kart Logo" height="70" />
-    </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="products.html">Products</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contact.html">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="about.html">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="verify.html">Certificate</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link btn btn-dark" href="login.html" style="color: white;">Login</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #b2e0b2;">
+        <a class="navbar-brand" href="#">
+            <img src="LOGO.jpg" alt="VS Kart Logo" height="70" />
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="verify.html">Certificate</a></li>
+                <li class="nav-item"><a class="nav-link btn btn-dark" href="login.html" style="color: white;">Login</a></li>
+            </ul>
+        </div>
+    </nav>
   
-  <style>
-    /* Navbar Styles */
-    .navbar {
-      transition: background 0.5s;
-    }
-  
-    .nav-link {
-      color: #005500; /* Dark green for text */
-      transition: color 0.3s ease; /* Smooth color transition */
-    }
-  
-    .nav-link:hover {
-      color: #ff5722; /* Change to a contrasting color on hover */
-      background-color: rgba(255, 255, 255, 0.2); /* Slightly white background on hover */
-      border-radius: 5px; /* Rounded corners for the hover effect */
-    }
-  
-    .btn-dark {
-      background-color: #333; /* Dark background for the button */
-      color: white; /* White text */
-      border: none; /* Remove border */
-    }
-  
-    .btn-dark:hover {
-      background-color: #555; /* Lighter gray on hover */
-    }
-  </style>
-
     <h2>Certificate Verification</h2>
 
     <div class="container">
         <div class="card">
             <h3>Human Resources</h3>
-            <form id="verificationForm">
+            <form id="verificationFormHR">
                 <div class="form-group">
                     <input type="text" class="form-control" id="hrName" placeholder="Name" required>
                 </div>
@@ -122,7 +72,7 @@
 
         <div class="card">
             <h3>Graphic Design</h3>
-            <form>
+            <form id="verificationFormGD">
                 <div class="form-group">
                     <input type="text" class="form-control" id="gdName" placeholder="Name" required>
                 </div>
@@ -142,7 +92,7 @@
 
         <div class="card">
             <h3>Social Media Marketing</h3>
-            <form>
+            <form id="verificationFormSMM">
                 <div class="form-group">
                     <input type="text" class="form-control" id="smmName" placeholder="Name" required>
                 </div>
@@ -168,54 +118,47 @@
 
     <script>
         function verifyHR() {
-            const name = document.getElementById("hrName").value;
-            const joiningDate = document.getElementById("hrJoiningDate").value;
-            const endingDate = document.getElementById("hrEndingDate").value;
             const certificateNumber = document.getElementById("hrCertificateNumber").value;
 
-            const result = document.getElementById("hrVerificationResult");
-            if (name && joiningDate && endingDate && certificateNumber) {
-                result.textContent = "HR Candidate Verified Successfully!";
-                result.style.color = "green";
-            } else {
-                result.textContent = "Please fill in all fields.";
-                result.style.color = "red";
-            }
+            // Call Google Apps Script function
+            google.script.run.withSuccessHandler(function(response) {
+                const result = document.getElementById("hrVerificationResult");
+                if (response) {
+                    result.innerHTML = `<span style="color: green;">HR Candidate Verified Successfully!<br>Name: ${response.name}<br>Joining Date: ${response.joiningDate}<br>Ending Date: ${response.endingDate}</span>`;
+                } else {
+                    result.innerHTML = '<span style="color: red;">Certificate not found.</span>';
+                }
+            }).verifyCertificate(certificateNumber);
         }
 
         function verifyGD() {
-            const name = document.getElementById("gdName").value;
-            const joiningDate = document.getElementById("gdJoiningDate").value;
-            const endingDate = document.getElementById("gdEndingDate").value;
             const certificateNumber = document.getElementById("gdCertificateNumber").value;
 
-            const result = document.getElementById("gdVerificationResult");
-            if (name && joiningDate && endingDate && certificateNumber) {
-                result.textContent = "GD Candidate Verified Successfully!";
-                result.style.color = "green";
-            } else {
-                result.textContent = "Please fill in all fields.";
-                result.style.color = "red";
-            }
+            // Call Google Apps Script function
+            google.script.run.withSuccessHandler(function(response) {
+                const result = document.getElementById("gdVerificationResult");
+                if (response) {
+                    result.innerHTML = `<span style="color: green;">GD Candidate Verified Successfully!<br>Name: ${response.name}<br>Joining Date: ${response.joiningDate}<br>Ending Date: ${response.endingDate}</span>`;
+                } else {
+                    result.innerHTML = '<span style="color: red;">Certificate not found.</span>';
+                }
+            }).verifyCertificate(certificateNumber);
         }
 
         function verifySMM() {
-            const name = document.getElementById("smmName").value;
-            const joiningDate = document.getElementById("smmJoiningDate").value;
-            const endingDate = document.getElementById("smmEndingDate").value;
             const certificateNumber = document.getElementById("smmCertificateNumber").value;
 
-            const result = document.getElementById("smmVerificationResult");
-            if (name && joiningDate && endingDate && certificateNumber) {
-                result.textContent = "SMM Candidate Verified Successfully!";
-                result.style.color = "green";
-            } else {
-                result.textContent = "Please fill in all fields.";
-                result.style.color = "red";
-            }
+            // Call Google Apps Script function
+            google.script.run.withSuccessHandler(function(response) {
+                const result = document.getElementById("smmVerificationResult");
+                if (response) {
+                    result.innerHTML = `<span style="color: green;">SMM Candidate Verified Successfully!<br>Name: ${response.name}<br>Joining Date: ${response.joiningDate}<br>Ending Date: ${response.endingDate}</span>`;
+                } else {
+                    result.innerHTML = '<span style="color: red;">Certificate not found.</span>';
+                }
+            }).verifyCertificate(certificateNumber);
         }
     </script>
 
 </body>
 </html>
-
