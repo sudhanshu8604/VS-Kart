@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Verification</title>
+</head>
+<body>
+
+    <h2>Certificate Verification</h2>
+
+    <form id="verificationForm">
+        <h3>Human Resources</h3>
+        <input type="text" id="hrName" placeholder="Name" required>
+        <input type="date" id="hrJoiningDate" required>
+        <input type="date" id="hrEndingDate" required>
+        <input type="text" id="hrCertificateNumber" placeholder="Certificate Number" required>
+        <button type="button" onclick="verifyHR()">Verify HR Candidate</button>
+        <p id="hrVerificationResult"></p>
+
+        <h3>Graphic Design</h3>
+        <input type="text" id="gdName" placeholder="Name" required>
+        <input type="date" id="gdJoiningDate" required>
+        <input type="date" id="gdEndingDate" required>
+        <input type="text" id="gdCertificateNumber" placeholder="Certificate Number" required>
+        <button type="button" onclick="verifyGD()">Verify GD Candidate</button>
+        <p id="gdVerificationResult"></p>
+
+        <h3>Social Media Marketing</h3>
+        <input type="text" id="smmName" placeholder="Name" required>
+        <input type="date" id="smmJoiningDate" required>
+        <input type="date" id="smmEndingDate" required>
+        <input type="text" id="smmCertificateNumber" placeholder="Certificate Number" required>
+        <button type="button" onclick="verifySMM()">Verify SMM Candidate</button>
+        <p id="smmVerificationResult"></p>
+    </form>
+
+    <script>
+        function verifyHR() {
+            const name = document.getElementById("hrName").value;
+            const joiningDate = document.getElementById("hrJoiningDate").value;
+            const endingDate = document.getElementById("hrEndingDate").value;
+            const certificateNumber = document.getElementById("hrCertificateNumber").value;
+
+            const result = document.getElementById("hrVerificationResult");
+            if (name && joiningDate && endingDate && certificateNumber) {
+                result.textContent = "HR Candidate Verified Successfully!";
+                result.style.color = "green";
+            } else {
+                result.textContent = "Please fill in all fields.";
+                result.style.color = "red";
+            }
+        }
+
+        function verifyGD() {
+            const name = document.getElementById("gdName").value;
+            const joiningDate = document.getElementById("gdJoiningDate").value;
+            const endingDate = document.getElementById("gdEndingDate").value;
+            const certificateNumber = document.getElementById("gdCertificateNumber").value;
+
+            const result = document.getElementById("gdVerificationResult");
+            if (name && joiningDate && endingDate && certificateNumber) {
+                result.textContent = "GD Candidate Verified Successfully!";
+                result.style.color = "green";
+            } else {
+                result.textContent = "Please fill in all fields.";
+                result.style.color = "red";
+            }
+        }
+
+        function verifySMM() {
+            const name = document.getElementById("smmName").value;
+            const joiningDate = document.getElementById("smmJoiningDate").value;
+            const endingDate = document.getElementById("smmEndingDate").value;
+            const certificateNumber = document.getElementById("smmCertificateNumber").value;
+
+            const result = document.getElementById("smmVerificationResult");
+            if (name && joiningDate && endingDate && certificateNumber) {
+                result.textContent = "SMM Candidate Verified Successfully!";
+                result.style.color = "green";
+            } else {
+                result.textContent = "Please fill in all fields.";
+                result.style.color = "red";
+            }
+        }
+    </script>
+
+</body>
+</html>
