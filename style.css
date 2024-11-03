@@ -75,3 +75,21 @@ footer {
     font-weight: bold; /* Bold text */
     display: inline-block; /* Inline block for centering */
 }
+.nav-link {
+    color: #333; /* Dark color for better contrast */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.nav-link:hover {
+    color: #fff; /* Change to white on hover */
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly white background on hover */
+    border-radius: 5px; /* Rounded corners for the hover effect */
+}
+
+.btn-success {
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.btn-success:hover {
+    background-color: #28a745; /* Darker green on hover */
+}
